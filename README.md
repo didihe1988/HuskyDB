@@ -1,0 +1,2 @@
+# HuskyDB
+a C++ RDBMS
