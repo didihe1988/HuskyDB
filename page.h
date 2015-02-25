@@ -2,12 +2,7 @@
 #define PAGE
 #include <string>
 #include "cstddef"
-
-//rid
-struct RecordId{
-    int page_id;
-    int slot_id;
-};
+#include "record.h"
 
 struct PageHeader{
     int cur_pos_in_file;
@@ -35,12 +30,16 @@ class Page{
 public:
     const static int SIZE=8192;
     const static int DATA_SIZE=SIZE-sizeof(PageHeader);
+
+
+     const static int INVALID_PAGEID=-1;
+     PageHeader header;
+     std::string data;
 private:
     typedef int SlotId;
     const static int INVALID_SLOTID=-1;
 
-    PageHeader header;
-    std::string data;
+
 
 public:
     Page();
